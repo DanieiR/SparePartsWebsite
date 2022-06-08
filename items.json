@@ -1,0 +1,41 @@
+{
+    "Parts":[
+        {
+            "id": 1,
+            "name": "Carborator",
+            "Price": "12000",
+            "imgName": "product01.png"
+        },
+        {
+            "id": 2,
+            "name": "Suspension",
+            "Price": "20000",
+            "imgName": "download (2).jfif"
+        },
+        {
+            "id": 3,
+            "name": "Distributor",
+            "Price": "8000",
+            "imgName": "product03.png"
+        },
+        {
+            "id": 4,
+            "name": "Water Pump Gasket",
+            "Price": "5000",
+            "imgName": "product04.png"
+        },
+        {
+            "id": 5,
+            "name": "Back suspension",
+            "Price": "30000",
+            "imgName": "download (1).jfif"
+        },
+        {
+            "id": 6,
+            "name": "Head gasket",
+            "Price": "23000",
+            "imgName": "product06.png"
+        }
+        
+    ]
+}

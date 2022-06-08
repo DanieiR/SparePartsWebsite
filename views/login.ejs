@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Blank page</title>
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+ 		<link type="text/css" rel="stylesheet" href="css1/bootstrap.min.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css1/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css1/slick-theme.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css1/nouislider.min.css"/>
+ 		<link rel="stylesheet" href="css1/font-awesome.min.css">
+ 		<link type="text/css" rel="stylesheet" href="css1/style.css"/>
+		 <title>Login Register App</title>
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+		 </script>
+		 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		 <link rel="stylesheet" href="./css/main.css">
+	 
+		 <script type="text/javascript">
+			 $(document).ready(() => {
+	 
+				 $("#form").submit((event) => {
+					 event.preventDefault();
+	 
+					 $.ajax({
+						 type: 'POST',
+						 url: '/login',
+						 data: $('#form').serialize(),
+						 dataType: "json",
+						 success: (response) => {
+							 $('#form')[0].reset();
+	 
+							 document.getElementById("check").innerHTML = response.Success;
+							 //ADD THIS CODE
+							 setTimeout(() => {
+								 document.getElementById("check").innerHTML = "";
+							 }, 3000);
+							 if (response.Success == "Success!") {
+								 document.getElementById("aa").click();
+							 };
+						 },
+						 error: () => {
+						 }
+					 })
+				 });
+	 
+			 });
+		 </script>
+    </head>
+	<body>
+		<header>
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> autoparts@gmail.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> 1734 kashmir road Lahore</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+					</ul>
+				</div>
+			</div>
+			<div id="header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+									<img src="./img/logo2.jpg" alt="">
+								</a>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<input class="input" placeholder="Search here">
+									<button class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+	
+								</div>
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+	
+		<div style="width:auto; height:500px;">
+			<div class="col-md-4 col-md-offset-4 form-card">
+				<div>
+					<p>Login</p>
+				</div>
+				<div class="form-group ">
+					<form id="form" method="post">
+						<input type="text" name="email" pattern="[-!#$%&'*+\/0-9=?ก-๙A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?ก-๙A-Z^_a-z`{|}~])*@[ก-๙a-zA-Z0-9](-*\.?[ก-๙a-zA-Z0-9])*\.[ก-๙a-zA-Z](-?[ก-๙a-zA-Z0-9])+$" placeholder="E-mail" required="" class="form-control"><br />
+						<input type="password" name="password" placeholder="Password" required="" class="form-control"><br />
+						<input type="submit" value="Login" class="btn btn-success">
+					</form>
+				</div>
+				<div class="mssg bg-danger">
+					<span id="check"></span>
+				</div>
+				<div id="LangTable"><a href="/profile" id="aa"></a>
+				</div>
+				<div><span>Do you forgot password? </span><a href="/forgetpass">click here</a>
+				</div>
+				<div id="LangTable"><span>Do you want to register a new Account? </span><a href="/">click here</a>
+				</div>
+			</div>
+		</div>
+		<footer id="footer">
+			<div class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">About Us</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-6">
+						</div>
+						<div class="clearfix visible-xs"></div>
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Information</h3>
+								<ul class="footer-links">
+									<li><a href="#">About Us</a></li>
+									<li><a href="#">Contact Us</a></li>
+									<li><a href="#">Privacy Policy</a></li>
+									<li><a href="#">Orders and Returns</a></li>
+									<li><a href="#">Terms & Conditions</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Service</h3>
+								<ul class="footer-links">
+									<li><a href="#">My Account</a></li>
+									<li><a href="#">View Cart</a></li>
+									<li><a href="#">Wishlist</a></li>
+									<li><a href="#">Track My Order</a></li>
+									<li><a href="#">Help</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-payments">
+								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+							</ul>
+							<span class="copyright">
+								 <a target="_blank" href="https://www.templateshub.net">Templates Hub</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
